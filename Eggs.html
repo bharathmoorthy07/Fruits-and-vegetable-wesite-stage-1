@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eggs Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .egg-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .egg-list li {
+            cursor: pointer;
+            padding: 5px;
+        }
+        .egg-list li:hover {
+            background-color: #f0f0f0;
+        }
+        .egg-description {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bharath Exports Limited</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="eggs.html">Eggs</a></li>
+                <li><a href="vegetables.html">Vegetables</a></li>
+                <li><a href="fruits.html">Fruits</a></li>
+                <li><a href="dryfruits.html">Dry Fruits</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="egg-list">
+            <h2>Egg Types</h2>
+            <ul>
+                <li onclick="showEgg('organic')">Organic Eggs</li>
+                <li onclick="showEgg('free-range')">Free-range Eggs</li>
+                <li onclick="showEgg('cage-free')">Cage-free Eggs</li>
+            </ul>
+        </div>
+        <div class="egg-description">
+            <h2 id="eggTitle">Select an egg type</h2>
+            <img src="" alt="" id="eggImage">
+            <p id="eggDescription">Click on an egg type to see its description and image.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bharath Exports Limited</p>
+    </footer>
+    <script>
+        function showEgg(eggType) {
+            let eggTitle = document.getElementById('eggTitle');
+            let eggImage = document.getElementById('eggImage');
+            let eggDescription = document.getElementById('eggDescription');
+
+            switch (eggType) {
+                case 'organic':
+                    eggTitle.textContent = 'Organic Eggs';
+                    eggImage.src = 'organic-cage-free-eggs.jpg';
+                    eggDescription.textContent = 'Organic eggs are sourced from farms that follow organic practices.';
+                    break;
+                case 'free-range':
+                    eggTitle.textContent = 'Free-range Eggs';
+                    eggImage.src = 'free-range-eggs.jpg';
+                    eggDescription.textContent = 'Free-range eggs are laid by hens that roam freely outdoors.';
+                    break;
+                case 'cage-free':
+                    eggTitle.textContent = 'Cage-free Eggs';
+                    eggImage.src = 'brown.cms.webp';
+                    eggDescription.textContent = 'Cage-free eggs come from hens that are not kept in cages, allowing more movement.';
+                    break;
+                default:
+                    eggTitle.textContent = 'Select an egg type';
+                    eggImage.src = '';
+                    eggDescription.textContent = 'Click on an egg type to see its description and image.';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dry Fruits Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .dry-fruit-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .dry-fruit-list li {
+            cursor: pointer;
+            padding: 5px;
+        }
+        .dry-fruit-list li:hover {
+            background-color: #f0f0f0;
+        }
+        .dry-fruit-description {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bharath Exports Limited</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="eggs.html">Eggs</a></li>
+                <li><a href="vegetables.html">Vegetables</a></li>
+                <li><a href="fruits.html">Fruits</a></li>
+                <li><a href="dryfruits.html">Dry Fruits</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="dry-fruit-list">
+            <h2>Dry Fruit Types</h2>
+            <ul>
+                <li onclick="showDryFruit('almonds')">Almonds</li>
+                <li onclick="showDryFruit('walnuts')">Walnuts</li>
+                <li onclick="showDryFruit('raisins')">Raisins</li>
+            </ul>
+        </div>
+        <div class="dry-fruit-description">
+            <h2 id="dryFruitTitle">Select a dry fruit type</h2>
+            <img src="" alt="" id="dryFruitImage">
+            <p id="dryFruitDescription">Click on a dry fruit type to see its description and image.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bharath Exports Limited</p>
+    </footer>
+    <script>
+        function showDryFruit(dryFruitType) {
+            let dryFruitTitle = document.getElementById('dryFruitTitle');
+            let dryFruitImage = document.getElementById('dryFruitImage');
+            let dryFruitDescription = document.getElementById('dryFruitDescription');
+
+            switch (dryFruitType) {
+                case 'almonds':
+                    dryFruitTitle.textContent = 'Almonds';
+                    dryFruitImage.src = 'almonds.avif';
+                    dryFruitDescription.textContent = 'Almonds are nutritious nuts with healthy fats and vitamins.';
+                    break;
+                case 'walnuts':
+                    dryFruitTitle.textContent = 'Walnuts';
+                    dryFruitImage.src = 'walnuts.png';
+                    dryFruitDescription.textContent = 'Walnuts are rich in omega-3 fatty acids and offer various health benefits.';
+                    break;
+                case 'raisins':
+                    dryFruitTitle.textContent = 'Raisins';
+                    dryFruitImage.src = 'grapes.webp';
+                    dryFruitDescription.textContent = 'Raisins are dried grapes that are sweet and commonly used in cooking and snacks.';
+                    break;
+                default:
+                    dryFruitTitle.textContent = 'Select a dry fruit type';
+                    dryFruitImage.src = '';
+                    dryFruitDescription.textContent = 'Click on a dry fruit type to see its description and image.';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

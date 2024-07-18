@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegetables Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .vegetable-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .vegetable-list li {
+            cursor: pointer;
+            padding: 5px;
+        }
+        .vegetable-list li:hover {
+            background-color: #f0f0f0;
+        }
+        .vegetable-description {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bharath Exports Limited</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="eggs.html">Eggs</a></li>
+                <li><a href="vegetables.html">Vegetables</a></li>
+                <li><a href="fruits.html">Fruits</a></li>
+                <li><a href="dryfruits.html">Dry Fruits</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="vegetable-list">
+            <h2>Vegetable Types</h2>
+            <ul>
+                <li onclick="showVegetable('tomatoes')">Tomatoes</li>
+                <li onclick="showVegetable('carrots')">Carrots</li>
+                <li onclick="showVegetable('spinach')">Spinach</li>
+            </ul>
+        </div>
+        <div class="vegetable-description">
+            <h2 id="vegetableTitle">Select a vegetable type</h2>
+            <img src="" alt="" id="vegetableImage">
+            <p id="vegetableDescription">Click on a vegetable type to see its description and image.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bharath Exports Limited</p>
+    </footer>
+    <script>
+        function showVegetable(vegetableType) {
+            let vegetableTitle = document.getElementById('vegetableTitle');
+            let vegetableImage = document.getElementById('vegetableImage');
+            let vegetableDescription = document.getElementById('vegetableDescription');
+
+            switch (vegetableType) {
+                case 'tomatoes':
+                    vegetableTitle.textContent = 'Tomatoes';
+                    vegetableImage.src = 'tomatoes.webp';
+                    vegetableDescription.textContent = 'Tomatoes are nutritious and versatile vegetables used in various cuisines.';
+                    break;
+                case 'carrots':
+                    vegetableTitle.textContent = 'Carrots';
+                    vegetableImage.src = 'carrots.jpeg';
+                    vegetableDescription.textContent = 'Carrots are rich in vitamins and commonly used in salads and cooking.';
+                    break;
+                case 'spinach':
+                    vegetableTitle.textContent = 'Spinach';
+                    vegetableImage.src = 'spinach.avif';
+                    vegetableDescription.textContent = 'Spinach is a leafy green vegetable packed with nutrients like iron and vitamins.';
+                    break;
+                default:
+                    vegetableTitle.textContent = 'Select a vegetable type';
+                    vegetableImage.src = '';
+                    vegetableDescription.textContent = 'Click on a vegetable type to see its description and image.';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>

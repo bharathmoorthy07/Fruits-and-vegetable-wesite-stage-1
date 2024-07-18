@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .fruit-list {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .fruit-list li {
+            cursor: pointer;
+            padding: 5px;
+        }
+        .fruit-list li:hover {
+            background-color: #f0f0f0;
+        }
+        .fruit-description {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bharath Exports Limited</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="eggs.html">Eggs</a></li>
+                <li><a href="vegetables.html">Vegetables</a></li>
+                <li><a href="fruits.html">Fruits</a></li>
+                <li><a href="dryfruits.html">Dry Fruits</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="fruit-list">
+            <h2>Fruit Types</h2>
+            <ul>
+                <li onclick="showFruit('apples')">Apples</li>
+                <li onclick="showFruit('bananas')">Bananas</li>
+                <li onclick="showFruit('oranges')">Oranges</li>
+            </ul>
+        </div>
+        <div class="fruit-description">
+            <h2 id="fruitTitle">Select a fruit type</h2>
+            <img src="" alt="" id="fruitImage">
+            <p id="fruitDescription">Click on a fruit type to see its description and image.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Bharath Exports Limited</p>
+    </footer>
+    <script>
+        function showFruit(fruitType) {
+            let fruitTitle = document.getElementById('fruitTitle');
+            let fruitImage = document.getElementById('fruitImage');
+            let fruitDescription = document.getElementById('fruitDescription');
+
+            switch (fruitType) {
+                case 'apples':
+                    fruitTitle.textContent = 'Apples';
+                    fruitImage.src = 'apples.avif';
+                    fruitDescription.textContent = 'Apples are nutritious fruits with various flavors and health benefits.';
+                    break;
+                case 'bananas':
+                    fruitTitle.textContent = 'Bananas';
+                    fruitImage.src = 'bananas.jpeg';
+                    fruitDescription.textContent = 'Bananas are rich in potassium and make a convenient snack.';
+                    break;
+                case 'oranges':
+                    fruitTitle.textContent = 'Oranges';
+                    fruitImage.src = 'oranges.webp';
+                    fruitDescription.textContent = 'Oranges are citrus fruits packed with vitamin C and antioxidants.';
+                    break;
+                default:
+                    fruitTitle.textContent = 'Select a fruit type';
+                    fruitImage.src = '';
+                    fruitDescription.textContent = 'Click on a fruit type to see its description and image.';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
